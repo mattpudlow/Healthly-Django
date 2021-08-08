@@ -7,19 +7,12 @@ class HospitalDataSerializer(serializers.ModelSerializer):
     class Meta:
         model = HospitalData
         fields = (
-        'id', 
-        'code', 
-        'host', 
-        'guest_can_pause', 
-        'votes_to_skip', 
-        'created_at'
+            'index', 
+            'facility_name', 
+            'city', 
+            'state', 
+            'zip_code'
         )
-
-
-class HospitalDataSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = HospitalData
-        fields = ('index', 'facility_name', 'city', 'state', 'zip_code')
         read_only_fields = fields
 
 
@@ -50,8 +43,11 @@ class HospitalDataFilter(filters.FilterSet):
     class Meta:
         model = HospitalData
         fields = {
-            'facility_id': ['exact'], 'facility_name': ['icontains'], 
-            'city': ['icontains'], 'state':  ['istartswith'], 'zip_code': ['startswith']
+            'facility_id': ['exact'], 
+            'facility_name': ['icontains'], 
+            'city': ['icontains'], 
+            'state':  ['istartswith'], 
+            'zip_code': ['startswith']
         } 
 
 
@@ -59,7 +55,6 @@ class CostDataFilter(filters.FilterSet):
     class Meta:
         model = CostData
         fields = {
-           'description': ['icontains'], 'procedure_cost': ['icontains']
+           'description': ['icontains'], 
+           'procedure_cost': ['icontains']
         } 
-
-
