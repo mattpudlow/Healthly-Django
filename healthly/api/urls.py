@@ -10,11 +10,11 @@ from rest_framework.routers import DefaultRouter
 router = DefaultRouter()
 router.register('procedure', ProcedureViewSet)
 router.register('cost-data', CostDataViewSet)
-#router.register('', HospitalDataViewSet)
+router.register('hospitaldata', HospitalDataViewSet)
 
 
 urlpatterns = [
-    path('hospitaldata', HospitalDataView.as_view()),
+    path('hospitaldata/', HospitalDataView.as_view()),
     path('register/', include('rest_auth.registration.urls')),
     path('token-obtain/', CustomAuthToken.as_view(), name="token-auth"),
     path('is-authenticated/', is_user_authenticated, name="is-authenticated"),
