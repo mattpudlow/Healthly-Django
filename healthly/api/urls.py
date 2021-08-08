@@ -10,7 +10,7 @@ from rest_framework.routers import DefaultRouter
 router = DefaultRouter()
 router.register('procedure', ProcedureViewSet)
 router.register('cost-data', CostDataViewSet)
-router.register('', HospitalDataViewSet)
+#router.register('', HospitalDataViewSet)
 
 
 urlpatterns = [
